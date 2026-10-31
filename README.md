@@ -87,14 +87,3 @@ static/app.js, style.css
 sample_data/        Example CSV / Excel files
 requirements.txt
 ```
-
-## Publish to your GitHub
-```bash
-git init
-git add .
-git commit -m "BigQuery bulk uploader"
-git branch -M main
-git remote add origin https://github.com/<your-username>/bq-bulk-uploader.git
-git push -u origin main
-```
-(Create an empty repository named `bq-bulk-uploader` on github.com first.)
