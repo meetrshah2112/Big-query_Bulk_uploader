@@ -34,7 +34,7 @@ A small local web tool to upload **many CSV / Excel files at once** into a singl
 
 ## 3. Install and run
 ```bash
-git clone https://github.com/<your-username>/bq-bulk-uploader.git
+git clone https://github.com/meetrshah2112/Big-query_Bulk_uploader.git
 cd bq-bulk-uploader
 
 python -m venv venv
