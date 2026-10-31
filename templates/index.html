@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BigQuery Bulk Uploader</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header><h1>BigQuery Bulk Uploader</h1><p>Upload many CSV / Excel files into one dataset</p></header>
+
+  <nav>
+    <button class="tab active" data-tab="connect">1. Connection</button>
+    <button class="tab" data-tab="upload">2. Upload</button>
+    <button class="tab" data-tab="tables">3. Tables</button>
+  </nav>
+
+  <main>
+    <section id="connect" class="panel active">
+      <label>Project ID <input id="project" placeholder="my-project-123456"></label>
+      <label>Dataset name <input id="dataset" placeholder="my_dataset"></label>
+      <label>Location (used only if the dataset must be created)
+        <select id="location">
+          <option value="US">US</option><option value="EU">EU</option>
+          <option value="asia-south1">asia-south1 (Mumbai)</option>
+          <option value="asia-southeast1">asia-southeast1 (Singapore)</option>
+        </select>
+      </label>
+      <button id="checkBtn">Check connection</button>
+      <div id="connMsg" class="msg"></div>
+    </section>
+
+    <section id="upload" class="panel">
+      <p class="hint">Target: <strong id="target">(set on Connection tab)</strong></p>
+      <label>If a table already exists
+        <select id="mode">
+          <option value="replace">Replace it</option>
+          <option value="append">Append rows</option>
+          <option value="fail">Fail (do not touch)</option>
+        </select>
+      </label>
+      <label>Files (.csv, .xlsx, .xls) - select as many as you like
+        <input type="file" id="files" multiple accept=".csv,.xlsx,.xls,.xlsm,.txt">
+      </label>
+      <button id="uploadBtn">Upload</button>
+      <div id="uploadMsg" class="msg"></div>
+      <table id="resultTable" hidden>
+        <thead><tr><th>File</th><th>Table</th><th>Rows</th><th>Status</th><th>Details</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="tables" class="panel">
+      <button id="refreshBtn">Refresh table list</button>
+      <div id="tablesMsg" class="msg"></div>
+      <table id="tablesTable" hidden>
+        <thead><tr><th>Table</th><th>Rows</th><th>Columns</th><th>Last modified</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

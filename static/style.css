@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, Arial, sans-serif; margin: 0; color: #1f2933; background: #f5f7fa; }
+header { background: #1a3a5c; color: #fff; padding: 18px 24px; }
+header h1 { margin: 0; font-size: 1.4rem; }
+header p { margin: 4px 0 0; opacity: .8; font-size: .9rem; }
+nav { display: flex; gap: 4px; padding: 12px 24px 0; background: #e4e9ef; }
+.tab { border: 0; padding: 10px 18px; background: #cfd7e0; cursor: pointer; border-radius: 6px 6px 0 0; font-size: .95rem; }
+.tab.active { background: #fff; font-weight: 600; }
+main { max-width: 900px; margin: 0 auto; padding: 0 24px 40px; }
+.panel { display: none; background: #fff; padding: 24px; border-radius: 0 6px 6px 6px; box-shadow: 0 1px 3px #0002; }
+.panel.active { display: block; }
+label { display: block; margin-bottom: 14px; font-size: .9rem; }
+input:not([type=file]), select { display: block; width: 100%; max-width: 420px; margin-top: 4px; padding: 8px; border: 1px solid #aeb8c4; border-radius: 4px; font-size: .95rem; }
+input[type=file] { display: block; margin-top: 6px; }
+button:not(.tab) { background: #1a73e8; color: #fff; border: 0; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: .95rem; }
+button:disabled { opacity: .5; cursor: wait; }
+.msg { margin-top: 14px; padding: 10px 12px; border-radius: 4px; display: none; font-size: .9rem; }
+.msg.ok { display: block; background: #e3f6e8; color: #17692f; }
+.msg.err { display: block; background: #fde8e8; color: #9b1c1c; }
+.msg.info { display: block; background: #e8f0fe; color: #1a4f9c; }
+table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: .88rem; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid #e1e6ec; vertical-align: top; }
+th { background: #f0f3f7; }
+.s-Success { color: #17692f; font-weight: 600; }
+.s-Failed { color: #9b1c1c; font-weight: 600; }
+.s-Uploading { color: #8a6100; }
+.hint { font-size: .9rem; }
